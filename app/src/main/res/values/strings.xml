@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Alcohol</string>
+    <string name="result_format">%d m %d d %s h %s m %s s</string>
+    <string name="drink">Бухнул</string>
+    <string name="mini_drink">Выпил</string>
+    <string name="without_alco">Без алкоголя</string>
+    <string name="statistics_text">статистика</string>
+    <string name="dialog_welcome_name">Buhlishko</string>
+    <string name="dialog_welcome_description">При помощи этого приложения можно отследить период времени, за который вы не употребляли алкоголь. А также посмотреть статистику если употребляли.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_hide_text">свернуть</string>
+</resources>
