@@ -26,8 +26,12 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.VH
     @Override
     public void onBindViewHolder(VHolder holder, int position) {
         Information information = infoList.get(position);
+        String realTime = information.getTime().toString()
+                .replace("-", " ")
+                .replace("T", ",  ")
+                .substring(0,18);
         holder.tvAction.setText(information.getAction());
-        holder.tvTime.setText(information.getTime());
+        holder.tvTime.setText(realTime);
         holder.tvDescription.setText(information.getDescription());
     }
 

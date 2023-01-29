@@ -15,6 +15,7 @@ import com.example.alcohol.recyclerView.Information;
 import com.example.alcohol.recyclerView.StatisticsAdapter;
 import com.example.alcohol.view.StatisticsView;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import moxy.presenter.InjectPresenter;
@@ -26,7 +27,8 @@ public class StatisticsFragment extends Fragment implements StatisticsView {
     private RecyclerView recyclerView;
 
     private void init(){
-        infoList.add(new Information("23:00", "Вы бухнули", "Это пиздец"));
+
+        infoList.add(new Information(LocalDateTime.now(), "Вы бухнули", "Продержались 0 дней 1 месяц 3 часа 15 сек"));
     }
 
     @Override
