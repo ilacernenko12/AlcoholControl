@@ -24,7 +24,6 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("HUI", "onCreate");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -36,9 +35,6 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     private void setListeners() {
         binding.btnDrink.setOnClickListener(view -> {
             mainPresenter.resetChronometer(binding.chronometer);
-            long time = binding.chronometer.getBase()/1000;
-            binding.textView.setText(String.valueOf(time));
-            System.out.println();
         });
 
         binding.btnMiniDrink.setOnClickListener(view -> {
