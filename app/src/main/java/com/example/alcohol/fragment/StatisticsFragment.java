@@ -26,7 +26,7 @@ public class StatisticsFragment extends Fragment implements StatisticsView {
     private RecyclerView recyclerView;
 
     private void init(){
-        infoList.add(new Information("23:40", "Вы бухнули", "Это пиздец"));
+        infoList.add(new Information("23:00", "Вы бухнули", "Это пиздец"));
     }
 
     @Override

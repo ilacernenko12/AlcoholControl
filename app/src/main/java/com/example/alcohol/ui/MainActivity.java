@@ -3,7 +3,6 @@ package com.example.alcohol.ui;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.example.alcohol.R;
@@ -87,7 +86,6 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("HUI", "onDestroy");
         binding = null;
     }
 }
