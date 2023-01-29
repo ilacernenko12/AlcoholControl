@@ -11,5 +11,5 @@ public interface MainView extends MvpView{
     @StateStrategyType(AddToEndSingleStrategy.class)
     void showFragment();
     @StateStrategyType(AddToEndSingleStrategy.class)
-    void backToActivity();
+    void closeFragment();
 }

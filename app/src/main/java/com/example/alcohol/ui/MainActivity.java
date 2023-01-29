@@ -2,12 +2,9 @@ package com.example.alcohol.ui;
 
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
-import androidx.fragment.app.FragmentManager;
 
 import com.example.alcohol.R;
 import com.example.alcohol.databinding.ActivityMainBinding;
@@ -39,6 +36,9 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     private void setListeners() {
         binding.btnDrink.setOnClickListener(view -> {
             mainPresenter.resetChronometer(binding.chronometer);
+            long time = binding.chronometer.getBase()/1000;
+            binding.textView.setText(String.valueOf(time));
+            System.out.println();
         });
 
         binding.btnMiniDrink.setOnClickListener(view -> {
@@ -70,41 +70,24 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
     @Override
     public void showFragment() {
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction()
+        getSupportFragmentManager()
+                .beginTransaction()
                 .add(R.id.layoutForFragment, StatisticsFragment.class, null)
                 .setReorderingAllowed(true)
+                .addToBackStack(null)
                 .commit();
         binding.btnHideStatistics.setVisibility(View.VISIBLE);
         binding.btnShowStatistics.setVisibility(View.GONE);
     }
 
     @Override
-    public void backToActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void closeFragment() {
+        getSupportFragmentManager().popBackStack();
+
+        binding.btnShowStatistics.setVisibility(View.VISIBLE);
+        binding.btnHideStatistics.setVisibility(View.GONE);
     }
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        Log.d("HUI", "onStart");
-    }
-    @Override
-    public void onPause(){
-        super.onPause();
-        Log.d("HUI", "onPause");
-    }
-    @Override
-    public void onResume(){
-        super.onResume();
-        Log.d("HUI", "onResume");
-    }
-    @Override
-    public void onStop(){
-        super.onStop();
-        Log.d("HUI", "onStop");
-    }
     @Override
     public void onDestroy() {
         super.onDestroy();

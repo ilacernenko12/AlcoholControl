@@ -7,5 +7,4 @@ import moxy.MvpPresenter;
 
 @InjectViewState
 public class StatisticsPresenter extends MvpPresenter<StatisticsView> {
-
 }

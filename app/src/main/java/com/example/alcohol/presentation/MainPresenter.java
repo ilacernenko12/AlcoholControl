@@ -57,6 +57,11 @@ public class MainPresenter extends MvpPresenter<MainView> {
         chronometer.start();
     }
 
+    public void getTimeFromChronometer(Chronometer chronometer){
+        String result = chronometer.getText().toString();
+    }
+
+
     public void showWelcomeDialog() {
         getViewState().showAlertDialog();
     }
@@ -66,6 +71,6 @@ public class MainPresenter extends MvpPresenter<MainView> {
     }
 
     public void returnToActivity() {
-        getViewState().backToActivity();
+        getViewState().closeFragment();
     }
 }
